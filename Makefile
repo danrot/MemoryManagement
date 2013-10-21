@@ -1,11 +1,9 @@
-%.o: %.c
-
 memory: memory.o main.o
 	gcc -o $@ memory.o main.o
 
-memory.o: memory.h
+memory.o: memory.c memory.h
 	gcc -c $*.c
 
-main.o: memory.h
+main.o: main.c memory.h
 	gcc -c $*.c
 	
